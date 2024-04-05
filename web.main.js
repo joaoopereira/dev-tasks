@@ -349,7 +349,9 @@ module.exports = function (gulpWrapper, ctx) {
         }        
 
         let bundlesFiles = getFiles(path.join(ctx.baseDir, 'bundles'), includeRegex, excludeRegex, 1);
+        pluginUtil.log(`Number files in bundles folder: ${bundlesFiles.length}`);
         let nodeFiles = getFiles(path.join(ctx.baseDir, 'node_modules'), includeRegex, excludeRegex, 1);
+        pluginUtil.log(`Number files in node_modules folder: ${nodeFiles.length}`);
         
         let compressedFilesCount = 0;
         let parallelCompressFiles = (filepaths) => {
