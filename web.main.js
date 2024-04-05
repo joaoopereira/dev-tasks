@@ -315,7 +315,7 @@ module.exports = function (gulpWrapper, ctx) {
             }
             return files;
         }, []);
-        return Array.prototype.concat(...files);
+        return files.reduce((acc, val) => acc.concat(val), []);
     }
 
     /**
